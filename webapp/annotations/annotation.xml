@@ -1,0 +1,213 @@
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common" />
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI" />
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication" />
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/sap/ZGW_MONITOR_SKU_SRV/$metadata">
+        <edmx:Include Namespace="ZGW_MONITOR_SKU_SRV" Alias="SAP" />
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="local">
+            <Annotations Target="ZGW_MONITOR_SKU_SRV.ZCDS_FILTROS_CUENTASType">
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>Centro</PropertyPath>
+                        <PropertyPath>Documentofi</PropertyPath>
+                        <PropertyPath>Proveedor</PropertyPath>
+                        <PropertyPath>Ejercicio</PropertyPath>
+                        <PropertyPath>Factura</PropertyPath>
+                        <PropertyPath>Clase</PropertyPath>
+                        <PropertyPath>Material</PropertyPath>
+                        <PropertyPath>Cuenta</PropertyPath>
+                        <PropertyPath>Sociedad</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP.Itemssku">
+                <Annotation Term="com.sap.vocabularies.UI.v1.PresentationVariant">
+                    <Record>
+                        <PropertyValue Property="RequestAtLeast">
+                            <Collection>
+                                <Record>
+                                    <PropertyPath>Sociedad</PropertyPath>
+                                    <PropertyPath>Centro</PropertyPath>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="GroupBy">
+                            <Collection>
+                                    <PropertyPath>Factura</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                <!-- <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Semaforo" />
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High" />
+                        </Record>
+                    </Collection> -->
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Ejercicio" />
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/low" />
+                        </Record>
+                    </Collection>
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Documento" />
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High" />
+                        </Record>
+                    </Collection>
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Documentofi" />
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High" />
+                        </Record>
+                    </Collection>
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Factura" />
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High" />
+                        </Record>
+                    </Collection>
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Sku" />
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High" />
+                        </Record>
+                    </Collection>
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Precio" />
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High" />
+                        </Record>
+                    </Collection>
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Material" />
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High" />
+                        </Record>
+                    </Collection>
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Preciore" />
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High" />
+                        </Record>
+                    </Collection>
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Sociedad" />
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High" />
+                        </Record>
+                    </Collection>
+                    <!-- <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Diferencia" />
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High" />
+                        </Record>
+                    </Collection> -->
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Rebzg" />
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High" />
+                        </Record>
+                    </Collection>
+                    <!-- <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Mblnr" />
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High" />
+                        </Record>
+                    </Collection> -->
+                    <!-- <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Zuonr" />
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High" />
+                        </Record>
+                    </Collection> -->
+                    <!-- <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="BuzeiSender" />
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High" />
+                        </Record>
+                    </Collection> -->
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP.ZCDS_FILTROS_CUENTASType/Centro">
+                <Annotation Term="Common.Label" String="Centro" />
+            </Annotations>
+            <Annotations Target="SAP.ZCDS_FILTROS_CUENTASType/Documentofi">
+                <Annotation Term="Common.Label" String="Doc. FI RC" />
+            </Annotations>
+            <Annotations Target="SAP.ZCDS_FILTROS_CUENTASType/Ejercicio">
+                <Annotation Term="Common.Label" String="Ejercicio" />
+            </Annotations>
+            <Annotations Target="SAP.ZCDS_FILTROS_CUENTASType/Cuenta">
+                <Annotation Term="Common.Label" String="Cuenta" />
+            </Annotations>
+            <Annotations Target="SAP.ZCDS_FILTROS_CUENTASType/Clase">
+                <Annotation Term="Common.Label" String="Clase de Doc." />
+            </Annotations>
+            <Annotations Target="SAP.ZCDS_FILTROS_CUENTASType/Factura">
+                <Annotation Term="Common.Label" String="Doc. legal" />
+            </Annotations>
+            <Annotations Target="SAP.ZCDS_FILTROS_CUENTASType/Proveedor">
+                <Annotation Term="Common.Label" String="Proveedor" />
+            </Annotations>
+            <Annotations Target="SAP.ZCDS_FILTROS_CUENTASType/Material">
+                <Annotation Term="Common.Label" String="Material" />
+            </Annotations>
+            <Annotations Target="SAP.ZCDS_FILTROS_CUENTASType/Sociedad">
+                <Annotation Term="Common.Label" String="Sociedad" />
+            </Annotations>
+            <Annotations Target="SAP.Itemssku/Documento">
+                <Annotation Term="Common.Label" String="Doc. MIRO RC" />
+            </Annotations>
+            <Annotations Target="SAP.Itemssku/Ejercicio">
+                <Annotation Term="Common.Label" String="{i18n>Ejercicio}" />
+            </Annotations>
+            <Annotations Target="SAP.Itemssku/Documentofi">
+                <Annotation Term="Common.Label" String="{i18n>docfi}" />
+            </Annotations>
+            <Annotations Target="SAP.Itemssku/Factura">
+                <Annotation Term="Common.Label" String="{i18n>Doculegal}" />
+            </Annotations>
+            <Annotations Target="SAP.Itemssku/Sku">
+                <Annotation Term="Common.Label" String="{i18n>Sku}" />
+            </Annotations>
+            <Annotations Target="SAP.Itemssku/Precio">
+                <Annotation Term="Common.Label" String="{i18n>Precio}" />
+            </Annotations>
+            <Annotations Target="SAP.Itemssku/Material">
+                <Annotation Term="Common.Label" String="{i18n>Material}" />
+            </Annotations>
+            <Annotations Target="SAP.Itemssku/Mblnr">
+                <Annotation Term="Common.Label" String="{i18n>Mblnr}" />
+            </Annotations>
+            <Annotations Target="SAP.Itemssku/Preciore">
+                <Annotation Term="Common.Label" String="{i18n>Preciore}" />
+            </Annotations>
+            <Annotations Target="SAP.Itemssku/Diferencia">
+                <Annotation Term="Common.Label" String="{i18n>Diferencia}" />
+            </Annotations>
+            <Annotations Target="SAP.Itemssku/Sociedad">
+                <Annotation Term="Common.Label" String="{i18n>Sociedad}" />
+            </Annotations>
+            <Annotations Target="SAP.Itemssku/Rebzg">
+                <Annotation Term="Common.Label" String="{i18n>Rebzg}" />
+            </Annotations>
+            <Annotations Target="SAP.Itemssku/Zuonr">
+                <Annotation Term="Common.Label" String="{i18n>Zuonr}" />
+            </Annotations>
+            <Annotations Target="SAP.Itemssku/BuzeiSender">
+                <Annotation Term="Common.Label" String="{i18n>BuzeiSender}" />
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

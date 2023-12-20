@@ -1,0 +1,214 @@
+<mvc:View
+    xmlns="sap.m"
+    xmlns:si="sap.suite.ui.commons.statusindicator"
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+    xmlns:smartTable="sap.ui.comp.smarttable"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    controllerName="geo.skumonitor.controller.ItemsSku"
+    height="100%"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content>
+            <VBox>
+                <smartFilterBar:SmartFilterBar
+                    id="smartFilterBar"
+                    entitySet="ZCDS_FILTROS_CUENTAS"
+                    persistencyKey="SmartFilter_Explored"
+                    basicSearchFieldName="Documento"
+                />
+                <smartTable:SmartTable
+                    id="idSmartTable"
+                    entitySet="ItemsskuSet"
+                    smartFilterId="smartFilterBar"
+                    tableType="ResponsiveTable"
+                    useExportToExcel="true"
+                    beforeExport="onBeforeExport"
+                    useVariantManagement="true"
+                    useTablePersonalisation="true"
+                    header="Items"
+                    showRowCount="true"
+                    persistencyKey="SmartTableAnalytical_Explored"
+                    enableAutoBinding="false"
+                    demandPopin="true"
+                    app:useSmartToggle="true"
+                    class="sapUiResponsiveContentPadding"
+                    editTogglable="false"
+                >
+                    <smartTable:layoutData>
+                        <FlexItemData
+                            growFactor="1"
+                            baseSize="0%"
+                        />
+                    </smartTable:layoutData>
+                    <Table
+                        growing="true"
+                        autoPopinMode="true"
+                    >
+                        <columns>
+                            <Column hAlign="Center">
+                                <customData>
+                                    <core:CustomData
+                                        key="p13nData"
+                                        value='\{"columnKey": "Actionbapi", "autoColumnWidth": \{ "visibleProperty": "Actionbapi" }, "columnIndex": 13, "leadingProperty": "Actionbapi", "sortProperty": "Actionbapi", "additionalProperty": "Actionbapi", "additionalSortProperty": "Actionbapi", "width": "auto"}'
+                                    />
+                                </customData>
+                                <header>
+                                    <!-- {/#Item/Name/@sap:label} -->
+                                    <Label text="Contabilizar diferencia" />
+                                </header>
+                            </Column>
+                        </columns>
+                        <columns>
+                            <Column hAlign="Begin">
+                                <customData>
+                                    <core:CustomData
+                                        key="p13nData"
+                                        value='\{"columnKey": "Anulacion", "autoColumnWidth": \{ "visibleProperty": "Anulacion" }, "columnIndex": 14, "leadingProperty": "Anulacion", "sortProperty": "Anulacion", "additionalProperty": "Anulacion", "additionalSortProperty": "Anulacion", "width": "auto"}'
+                                    />
+                                </customData>
+                                <header>
+                                    <Label text="Anular doc." />
+                                </header>
+                            </Column>
+                        </columns>
+                        <columns>
+                            <Column hAlign="Begin">
+                                <customData>
+                                    <core:CustomData
+                                        key="p13nData"
+                                        value='\{"columnKey": "Semaforo", "autoColumnWidth": \{ "visibleProperty": "Semaforo" }, "columnIndex": 0, "leadingProperty": "Semaforo", "sortProperty": "Semaforo", "additionalProperty": "Semaforo", "additionalSortProperty": "Semaforo", "width": "auto"}'
+                                    />
+                                </customData>
+                                <header>
+                                    <Label text="{i18n>Semaforo}" />
+                                </header>
+                            </Column>
+                        </columns>
+                        <columns>
+                            <Column hAlign="Begin">
+                                <customData>
+                                    <core:CustomData
+                                        key="p13nData"
+                                        value='\{"columnKey": "Diferencia", "autoColumnWidth": \{ "visibleProperty": "Diferencia" }, "columnIndex": 11, "leadingProperty": "Diferencia", "sortProperty": "Diferencia", "additionalProperty": "Diferencia", "additionalSortProperty": "Diferencia", "width": "auto"}'
+                                    />
+                                </customData>
+                                <header>
+                                    <Label text="{i18n>Diferencia}" />
+                                </header>
+                            </Column>
+                            <Column hAlign="Begin">
+                                <customData>
+                                    <core:CustomData
+                                        key="p13nData"
+                                        value='\{"columnKey": "Zuonr", "autoColumnWidth": \{ "visibleProperty": "Zuonr" }, "columnIndex": 12, "leadingProperty": "Zuonr", "sortProperty": "Zuonr", "additionalProperty": "Zuonr", "additionalSortProperty": "Zuonr", "width": "auto"}'
+                                    />
+                                </customData>
+                                <header>
+                                    <Label text="{i18n>Zuonr}" />
+                                </header>
+                            </Column>
+                            <Column hAlign="Begin">
+                                <customData>
+                                    <core:CustomData
+                                        key="p13nData"
+                                        value='\{"columnKey": "BuzeiSender", "autoColumnWidth": \{ "visibleProperty": "BuzeiSender" }, "columnIndex": 7, "leadingProperty": "BuzeiSender", "sortProperty": "BuzeiSender", "additionalProperty": "BuzeiSender", "additionalSortProperty": "BuzeiSender", "width": "auto"}'
+                                    />
+                                </customData>
+                                <header>
+                                    <Label text="{i18n>BuzeiSender}" />
+                                </header>
+                            </Column>
+                            <Column hAlign="Begin">
+                                <customData>
+                                    <core:CustomData
+                                        key="p13nData"
+                                        value='\{"columnKey": "Mblnr", "autoColumnWidth": \{ "visibleProperty": "Mblnr" }, "columnIndex": 7, "leadingProperty": "Mblnr", "sortProperty": "Mblnr", "additionalProperty": "Mblnr", "additionalSortProperty": "Mblnr", "width": "auto"}'
+                                    />
+                                </customData>
+                                <header>
+                                    <Label text="{i18n>Mblnr}" />
+                                </header>
+                            </Column>
+                        </columns>
+                        <items>
+                            <ColumnListItem>
+                                <cells>
+                                    <Button
+                                        activeIcon="sap-icon://accept"
+                                        ariaHasPopup="None"
+                                        enabled="true"
+                                        tooltip="Contabilizar diferencia (MR22)"
+                                        icon="sap-icon://accept"
+                                        iconDensityAware="true"
+                                        iconFirst="true"
+                                        press=".onCallBapi"
+                                        textDirection="Inherit"
+                                        type="Accept"
+                                        width="auto"
+                                    />
+                                </cells>
+                                <cells>
+                                    <Button
+                                        activeIcon="sap-icon://reset"
+                                        ariaHasPopup="None"
+                                        enabled="true"
+                                        icon="sap-icon://reset"
+                                        iconDensityAware="true"
+                                        iconFirst="true"
+                                        tooltip="Anular"
+                                        press=".anularDocu"
+                                        textDirection="Inherit"
+                                        type="Reject"
+                                        width="auto"
+                                    />
+                                </cells>
+                                <cells>
+                                    <si:StatusIndicator
+                                        value="{Semaforo}"
+                                        showLabel="false"
+                                    >
+                                        <si:ShapeGroup>
+                                            <si:Circle
+                                                cx="30"
+                                                cy="30"
+                                                r="10"
+                                            />
+                                        </si:ShapeGroup>
+                                        <si:propertyThresholds>
+                                            <si:PropertyThreshold
+                                                fillColor="Good"
+                                                toValue="100"
+                                            />
+                                            <si:PropertyThreshold
+                                                fillColor="Error"
+                                                toValue="99"
+                                            />
+                                        </si:propertyThresholds>
+                                    </si:StatusIndicator>
+                                </cells>
+                                <cells>
+                                    <Text text="{Diferencia}" />
+                                </cells>
+                                <cells>
+                                    <Text text="{Zzuonr}" />
+                                </cells>
+                                <cells>
+                                    <Text text="{BuzeiSender}" />
+                                </cells>
+                                <cells>
+                                    <Text text="{Mblnr}" />
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+                </smartTable:SmartTable>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

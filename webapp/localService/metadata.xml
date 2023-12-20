@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+ <edmx:Reference Uri="http://sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+  <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+ </edmx:Reference>
+ <edmx:Reference Uri="http://sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+  <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+ </edmx:Reference>
+ <edmx:Reference Uri="http://sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+  <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+ </edmx:Reference>
+ <edmx:Reference Uri="http://sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+  <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+  <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="CodeList"/>
+ </edmx:Reference>
+ <edmx:Reference Uri="http://sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+  <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+ </edmx:Reference>
+ <edmx:Reference Uri="http://sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+  <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+ </edmx:Reference>
+ <edmx:Reference Uri="http://sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+  <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+ </edmx:Reference>
+ <edmx:Reference Uri="http://sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+  <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+ </edmx:Reference>
+ <edmx:Reference Uri="http://sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+  <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+ </edmx:Reference>
+ <edmx:Reference Uri="http://sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+  <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+ </edmx:Reference>
+ <edmx:DataServices m:DataServiceVersion="2.0">
+  <Schema Namespace="ZGW_MONITOR_SKU_SRV" xml:lang="es" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+   <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+   <EntityType Name="Itemssku" sap:semantics="aggregate" sap:content-version="1">
+    <Key>
+     <PropertyRef Name="Sociedad"/>
+     <PropertyRef Name="Centro"/>
+     <PropertyRef Name="Documento"/>
+     <PropertyRef Name="Ejercicio"/>
+     <PropertyRef Name="Sku"/>
+     <PropertyRef Name="Documentofi"/>
+     <PropertyRef Name="Material"/>
+    </Key>
+    <Property Name="Actionbapi" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Indicador" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+    <Property Name="Mblnr" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Doc.material" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+    <Property Name="Message" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Char80" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+    <Property Name="Factura" Type="Edm.String" Nullable="false" MaxLength="16" sap:unicode="false" sap:label="Referencia" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+    <Property Name="Semaforo" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Semaforo" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+    <Property Name="Rebzg" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Ref.fact." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+    <Property Name="Zuonr" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Asignación" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+    <Property Name="BuzeiSender" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Posición emisor" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+    <Property Name="Sociedad" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Sociedad" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+    <Property Name="Anulacion" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Indicador" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+    <Property Name="Centro" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Ámbito no definido , posiblemente para niveles patch" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+    <Property Name="Documento" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Clv.referencia" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+    <Property Name="Ejercicio" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Clv.referencia" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+    <Property Name="Sku" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Material" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+    <Property Name="Documentofi" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Nº documento" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+    <Property Name="Precio" Type="Edm.Decimal" Nullable="false" Precision="24" Scale="3" sap:unicode="false" sap:label="Importe" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+    <Property Name="Material" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Material" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+    <Property Name="Preciore" Type="Edm.Decimal" Nullable="false" Precision="24" Scale="3" sap:unicode="false" sap:label="Importe" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+    <Property Name="Diferencia" Type="Edm.Decimal" Nullable="false" Precision="24" Scale="3" sap:unicode="false" sap:label="Importe" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+   </EntityType>
+   <EntityType Name="ZCDS_FILTROS_CUENTASType" sap:label="Vista CDS - Filtro para reporte de cuentas" sap:content-version="1">
+    <Key>
+     <PropertyRef Name="Ejercicio"/>
+     <PropertyRef Name="Centro"/>
+     <PropertyRef Name="Sociedad"/>
+     <PropertyRef Name="Documentofi"/>
+     <PropertyRef Name="Factura"/>
+     <PropertyRef Name="Clase"/>
+     <PropertyRef Name="Material"/>
+     <PropertyRef Name="Proveedor"/>
+     <PropertyRef Name="Cuenta"/>
+    </Key>
+    <Property Name="Ejercicio" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="NonNegative" sap:label="Ejercicio"/>
+    <Property Name="Centro" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:required-in-filter="true" sap:label="Centro"/>
+    <Property Name="Sociedad" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label="Sociedad"/>
+    <Property Name="Documentofi" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Nº documento" sap:quickinfo="Número de un documento contable"/>
+    <Property Name="Factura" Type="Edm.String" Nullable="false" MaxLength="16" sap:display-format="UpperCase" sap:label="Referencia" sap:quickinfo="Número de documento de referencia"/>
+    <Property Name="Clase" Type="Edm.String" Nullable="false" MaxLength="2" sap:display-format="UpperCase" sap:label="Clase de documento"/>
+    <Property Name="Material" Type="Edm.String" Nullable="false" MaxLength="40" sap:display-format="UpperCase" sap:label="Material" sap:quickinfo="Número de material" sap:value-list="standard"/>
+    <Property Name="Proveedor" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Proveedor" sap:quickinfo="Número de cuenta del proveedor o acreedor"/>
+    <Property Name="Cuenta" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Cuenta de mayor" sap:quickinfo="Cuenta de mayor de la contabilidad principal"/>
+   </EntityType>
+   <EntityType Name="ZCDS_MONITOR_SKUType" sap:label="Vista CDS - Monitor de SKU" sap:content-version="1">
+    <Key>
+     <PropertyRef Name="Sku"/>
+     <PropertyRef Name="Awkey"/>
+     <PropertyRef Name="Precio"/>
+     <PropertyRef Name="Material"/>
+    </Key>
+    <Property Name="Sku" Type="Edm.String" Nullable="false" MaxLength="40" sap:display-format="UpperCase" sap:label="Material" sap:quickinfo="Número de material"/>
+    <Property Name="Awkey" Type="Edm.String" Nullable="false" MaxLength="20" sap:display-format="UpperCase" sap:label="Clv.referencia" sap:quickinfo="Clave de referencia"/>
+    <Property Name="Precio" Type="Edm.Decimal" Nullable="false" Precision="24" Scale="3" sap:label="Importe" sap:quickinfo="Importe en la moneda del documento"/>
+    <Property Name="Material" Type="Edm.String" Nullable="false" MaxLength="40" sap:display-format="UpperCase" sap:label="Material" sap:quickinfo="Número de material"/>
+    <Property Name="Centro" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Centro"/>
+    <Property Name="Preciore" Type="Edm.Decimal" Precision="24" Scale="3" sap:label="Importe" sap:quickinfo="Importe en la moneda del documento"/>
+    <Property Name="Diferencia" Type="Edm.Decimal" Precision="24" Scale="2"/>
+    <Property Name="ActionBapi" Type="Edm.String" MaxLength="1"/>
+    <Property Name="Anulacion" Type="Edm.String" MaxLength="1"/>
+    <Property Name="Message" Type="Edm.String" MaxLength="50"/>
+   </EntityType>
+   <EntityType Name="ZCDS_VH_MATERIALType" sap:label="Vista CDS - Ayuda busqueda de Materiales" sap:value-list="true" sap:content-version="1">
+    <Key>
+     <PropertyRef Name="Matnr"/>
+     <PropertyRef Name="Description"/>
+    </Key>
+    <Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:display-format="UpperCase" sap:label="Material" sap:quickinfo="Número de material"/>
+    <Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Texto breve material" sap:quickinfo="Texto breve de material"/>
+   </EntityType>
+   <EntityContainer Name="ZGW_MONITOR_SKU_SRV_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+    <EntitySet Name="ItemsskuSet" EntityType="ZGW_MONITOR_SKU_SRV.Itemssku" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+    <EntitySet Name="ZCDS_FILTROS_CUENTAS" EntityType="ZGW_MONITOR_SKU_SRV.ZCDS_FILTROS_CUENTASType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:requires-filter="true" sap:content-version="1"/>
+    <EntitySet Name="ZCDS_MONITOR_SKU" EntityType="ZGW_MONITOR_SKU_SRV.ZCDS_MONITOR_SKUType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+    <EntitySet Name="ZCDS_VH_MATERIAL" EntityType="ZGW_MONITOR_SKU_SRV.ZCDS_VH_MATERIALType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+   </EntityContainer>
+   <Annotations Target="ZGW_MONITOR_SKU_SRV.ZCDS_FILTROS_CUENTASType/Material" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+    <Annotation Term="Common.ValueList">
+     <Record>
+      <PropertyValue Property="Label" String="Vista CDS - Ayuda busqueda de Materiales"/>
+      <PropertyValue Property="CollectionPath" String="ZCDS_VH_MATERIAL"/>
+      <PropertyValue Property="SearchSupported" Bool="false"/>
+      <PropertyValue Property="Parameters">
+       <Collection>
+        <Record Type="Common.ValueListParameterInOut">
+         <PropertyValue Property="LocalDataProperty" PropertyPath="Material"/>
+         <PropertyValue Property="ValueListProperty" String="Matnr"/>
+        </Record>
+        <Record Type="Common.ValueListParameterDisplayOnly">
+         <PropertyValue Property="ValueListProperty" String="Description"/>
+        </Record>
+       </Collection>
+      </PropertyValue>
+     </Record>
+    </Annotation>
+   </Annotations>
+   <Annotations Target="ZGW_MONITOR_SKU_SRV.ZGW_MONITOR_SKU_SRV_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+    <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+   </Annotations>
+   <Annotations Target="ZGW_MONITOR_SKU_SRV.ZGW_MONITOR_SKU_SRV_Entities/ZCDS_FILTROS_CUENTAS" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+    <Annotation Term="Capabilities.FilterRestrictions">
+     <Record>
+      <PropertyValue Property="RequiresFilter" Bool="true"/>
+      <PropertyValue Property="RequiredProperties">
+       <Collection>
+        <PropertyPath>Centro</PropertyPath>
+       </Collection>
+      </PropertyValue>
+     </Record>
+    </Annotation>
+   </Annotations>
+   <atom:link rel="self" href="http://sapds401.melisap.com:8001/sap/opu/odata/sap/ZGW_MONITOR_SKU_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+   <atom:link rel="latest-version" href="http://sapds401.melisap.com:8001/sap/opu/odata/sap/ZGW_MONITOR_SKU_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+  </Schema>
+ </edmx:DataServices>
+</edmx:Edmx>
